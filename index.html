@@ -335,10 +335,27 @@
 
     .hero-stats {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      margin-top: 4rem;
+    }
+
+    .hero-stats-title {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero-stats-grid {
+      display: flex;
       gap: 3rem;
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: 4rem;
     }
 
     .stat-item {
@@ -557,8 +574,38 @@
         font-size: 0.9rem;
       }
 
+      /* Mobile hero padding: Account for fixed header height
+       * Header structure on mobile (max-width: 768px):
+       * - Top padding: 1rem = 16px
+       * - Logo row: img (40px) + text side-by-side = ~40px height
+       * - Gap (nav flex gap): 1rem = 16px
+       * - Nav-cta buttons row: 
+       *   * Button padding: 0.6rem top/bottom = 9.6px each
+       *   * Font size: 0.9rem = ~14.4px
+       *   * Line height: ~1.5 = ~21.6px text height
+       *   * Button total height: 9.6 + 21.6 + 9.6 = ~41px
+       * - Bottom padding: 1rem = 16px
+       * - Border bottom: 1px
+       * Total header height: 16 + 40 + 16 + 41 + 16 + 1 = ~130px
+       * Add breathing room for badge visibility: ~50px
+       * Total needed: ~180px = 11.25rem
+       * Using 12rem (192px) for safe clearance and clear demarcation
+       */
       .hero {
-        padding: 6rem 1rem 3rem;
+        padding-top: 12rem; /* 192px - ensures badge is clearly visible below header */
+        padding-left: 1rem;
+        padding-right: 1rem;
+        padding-bottom: 3rem;
+      }
+
+      /* Additional margin-top for hero-content on mobile to ensure badge visibility */
+      .hero-content {
+        margin-top: 1rem; /* 16px extra spacing for clear demarcation */
+      }
+
+      /* Extra margin-top for hero-badge on mobile for clear separation from navbar */
+      .hero-badge {
+        margin-top: 1.5rem; /* 24px - ensures badge is clearly below header with good spacing */
       }
 
       .hero-title {
@@ -575,6 +622,16 @@
       }
 
       .hero-stats {
+        gap: 1rem;
+        margin-top: 3rem;
+      }
+
+      .hero-stats-title {
+        font-size: 0.75rem;
+        letter-spacing: 1.5px;
+      }
+
+      .hero-stats-grid {
         gap: 2rem;
       }
 
@@ -668,17 +725,20 @@
         </a>
       </div>
       <div class="hero-stats">
-        <div class="stat-item">
-          <span class="stat-number">10K+</span>
-          <span class="stat-label">Active Creators</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">50K+</span>
-          <span class="stat-label">Videos Created</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-number">100K+</span>
-          <span class="stat-label">Products Tagged</span>
+        <div class="hero-stats-title">6 Months Projection</div>
+        <div class="hero-stats-grid">
+          <div class="stat-item">
+            <span class="stat-number">10K+</span>
+            <span class="stat-label">Active Creators</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">50K+</span>
+            <span class="stat-label">Videos Created</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100K+</span>
+            <span class="stat-label">Products Tagged</span>
+          </div>
         </div>
       </div>
     </div>
