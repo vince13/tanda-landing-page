@@ -587,12 +587,12 @@
        * - Bottom padding: 1rem = 16px
        * - Border bottom: 1px
        * Total header height: 16 + 40 + 16 + 41 + 16 + 1 = ~130px
-       * Add breathing room for badge visibility: ~50px
-       * Total needed: ~180px = 11.25rem
-       * Using 12rem (192px) for safe clearance and clear demarcation
+       * Add breathing room for badge visibility: ~30px
+       * Total needed: ~160px = 10rem
+       * Using 10rem (160px) for optimal spacing
        */
       .hero {
-        padding-top: 12rem; /* 192px - ensures badge is clearly visible below header */
+        padding-top: 10rem; /* 160px - ensures badge is visible with optimal spacing */
         padding-left: 1rem;
         padding-right: 1rem;
         padding-bottom: 3rem;
@@ -600,12 +600,12 @@
 
       /* Additional margin-top for hero-content on mobile to ensure badge visibility */
       .hero-content {
-        margin-top: 1rem; /* 16px extra spacing for clear demarcation */
+        margin-top: 0.5rem; /* 8px extra spacing for clear demarcation */
       }
 
       /* Extra margin-top for hero-badge on mobile for clear separation from navbar */
       .hero-badge {
-        margin-top: 1.5rem; /* 24px - ensures badge is clearly below header with good spacing */
+        margin-top: 0.75rem; /* 12px - ensures badge is clearly below header */
       }
 
       .hero-title {
