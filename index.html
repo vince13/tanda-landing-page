@@ -58,17 +58,28 @@
   <link rel="dns-prefetch" href="https://app.tanda.media">
   <link rel="dns-prefetch" href="https://api.tanda.media">
   
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Fonts - Optimized with font-display: swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"></noscript>
+  <!-- Font Awesome - Load asynchronously -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-4HFFVVWP97"></script>
+  <!-- Google Analytics - Load after page load for better performance -->
   <script>
+    // Initialize dataLayer immediately
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-4HFFVVWP97');
+    
+    // Load GA script after page load
+    window.addEventListener('load', function() {
+      var script = document.createElement('script');
+      script.async = true;
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-4HFFVVWP97';
+      document.head.appendChild(script);
+    });
   </script>
   
   <!-- Structured Data (JSON-LD) -->
@@ -530,7 +541,7 @@
       margin-bottom: 3rem;
     }
 
-    .footer-section h4 {
+    .footer-section h3 {
       font-size: 1.2rem;
       margin-bottom: 1.5rem;
       color: var(--text-primary);
@@ -698,10 +709,13 @@
 </head>
 <body>
   <!-- Header -->
-  <header class="header" id="header">
+  <header class="header" id="header" role="banner">
     <nav class="nav">
       <a href="/" class="logo">
-        <img src="Tanda logo.png" alt="Tanda Logo">
+        <picture>
+          <source srcset="Tanda logo.webp" type="image/webp">
+          <img src="Tanda logo.png" alt="Tanda Logo" width="40" height="40" loading="eager">
+        </picture>
         <span>Tanda</span>
       </a>
       <div class="nav-cta">
@@ -712,6 +726,7 @@
   </header>
 
   <!-- Hero Section -->
+  <main role="main">
   <section class="hero">
     <div class="hero-content fade-in-up">
       <div class="hero-badge">
@@ -753,6 +768,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <!-- Features Section -->
   <section class="features">
@@ -778,7 +794,7 @@
         <h3>Product Tagging in Videos</h3>
         <p>Tag products directly in your videos for seamless shopping. Viewers can discover and purchase products without leaving the platform.</p>
         <a href="https://app.tanda.media/tag-products.html" class="feature-link">
-          Learn More <i class="fas fa-arrow-right"></i>
+          Learn About Product Tagging <i class="fas fa-arrow-right"></i>
         </a>
       </div>
       <div class="feature-card">
@@ -846,10 +862,10 @@
   </section>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="footer-content">
       <div class="footer-section">
-        <h4>Platform</h4>
+        <h3>Platform</h3>
         <ul>
           <li><a href="https://app.tanda.media">App Home</a></li>
           <li><a href="https://app.tanda.media/feed.html">Video Feed</a></li>
@@ -858,7 +874,7 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>For Creators</h4>
+        <h3>For Creators</h3>
         <ul>
           <li><a href="https://app.tanda.media/become-affiliate.html">Become Affiliate</a></li>
           <li><a href="https://app.tanda.media/analytics.html">Creator Analytics</a></li>
@@ -867,7 +883,7 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>For Sellers</h4>
+        <h3>For Sellers</h3>
         <ul>
           <li><a href="https://app.tanda.media/become-seller.html">Become a Seller</a></li>
           <li><a href="https://app.tanda.media/seller-dashboard.html">Seller Dashboard</a></li>
@@ -876,7 +892,7 @@
         </ul>
       </div>
       <div class="footer-section">
-        <h4>Company</h4>
+        <h3>Company</h3>
         <ul>
           <li><a href="https://app.tanda.media/press.html">Press & Media</a></li>
           <li><a href="https://app.tanda.media/investors.html">Investors</a></li>
