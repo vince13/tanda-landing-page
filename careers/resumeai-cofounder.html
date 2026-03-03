@@ -224,6 +224,15 @@
     .form-group input[type="file"] {
       padding: 0.5rem 0;
       cursor: pointer;
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+      display: block;
+      box-sizing: border-box;
+    }
+
+    .form-row .form-group {
+      min-width: 0;
     }
 
     .form-group input[type="file"]::file-selector-button {
@@ -441,17 +450,15 @@
           <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
         </div>
 
-        <div class="form-row">
-          <div class="form-group">
-            <label for="resume">Resume *</label>
-            <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-            <span class="field-hint">PDF, DOC, or DOCX. Max 10MB total.</span>
-          </div>
-          <div class="form-group">
-            <label for="cover">Cover letter</label>
-            <input type="file" id="cover" name="cover_letter" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-            <span class="field-hint">Optional. PDF, DOC, or DOCX.</span>
-          </div>
+        <div class="form-group">
+          <label for="resume">Resume *</label>
+          <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          <span class="field-hint">PDF, DOC, or DOCX. Max 10MB total.</span>
+        </div>
+        <div class="form-group">
+          <label for="cover">Cover letter</label>
+          <input type="file" id="cover" name="cover_letter" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+          <span class="field-hint">Optional. PDF, DOC, or DOCX.</span>
         </div>
 
         <div class="form-group">
