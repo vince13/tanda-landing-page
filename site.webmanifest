@@ -35,6 +35,13 @@
             "description": "Partner with Tanda",
             "url": "/strategic-partners.html",
             "icons": [{"src": "tanda-studio-icon-192.png", "sizes": "192x192"}]
+        },
+        {
+            "name": "Careers",
+            "short_name": "Careers",
+            "description": "Join OpenCareer as Co-Founder",
+            "url": "/careers/resumeai-cofounder.html",
+            "icons": [{"src": "tanda-studio-icon-192.png", "sizes": "192x192"}]
         }
     ]
 }

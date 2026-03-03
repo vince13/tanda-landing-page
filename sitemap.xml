@@ -20,6 +20,14 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Careers: ResumeAI Co-Founder -->
+  <url>
+    <loc>https://tanda.media/careers/resumeai-cofounder.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- App Home -->
   <url>
     <loc>https://app.tanda.media</loc>
