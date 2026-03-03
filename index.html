@@ -279,12 +279,20 @@
       margin-bottom: 2.5rem;
     }
 
-    /* Thesis */
+    /* Thesis & Why (centered block, left-aligned text) */
+    .section-centered .section-title {
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
     .thesis-copy {
       font-size: 1.1rem;
       color: var(--text-secondary);
       line-height: 1.8;
       max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .thesis-copy p { margin-bottom: 1rem; }
@@ -362,6 +370,8 @@
       border-radius: var(--border-radius);
       padding: 2.5rem;
       max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .why-block p {
@@ -539,7 +549,7 @@
     </section>
 
     <!-- Thesis -->
-    <section class="section" id="thesis">
+    <section class="section section-centered" id="thesis">
       <h2 class="section-title">Why We Exist</h2>
       <div class="thesis-copy">
         <p>
@@ -605,7 +615,7 @@
     </section>
 
     <!-- Why We Build -->
-    <section class="section">
+    <section class="section section-centered">
       <h2 class="section-title">Not Products. Systems.</h2>
       <div class="why-block">
         <p>Execution without distribution fails.</p>
