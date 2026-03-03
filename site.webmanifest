@@ -39,8 +39,8 @@
         {
             "name": "Careers",
             "short_name": "Careers",
-            "description": "Join OpenCareer as Co-Founder",
-            "url": "/careers/resumeai-cofounder.html",
+            "description": "Open roles at Tanda ventures",
+            "url": "/careers/",
             "icons": [{"src": "tanda-studio-icon-192.png", "sizes": "192x192"}]
         }
     ]
