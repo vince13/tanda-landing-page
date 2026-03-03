@@ -12,6 +12,14 @@
     <priority>1.0</priority>
   </url>
   
+  <!-- Pitch Deck -->
+  <url>
+    <loc>https://tanda.media/pitch-deck.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
   <!-- Strategic Partners -->
   <url>
     <loc>https://tanda.media/strategic-partners.html</loc>

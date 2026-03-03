@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <meta name="theme-color" content="#ff0050">
+  <title>Pitch Deck | Tanda Venture Studio</title>
+  <meta name="description" content="Tanda Venture Studio investor pitch deck. Building infrastructure for the AI-native generation.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://tanda.media/pitch-deck.html">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tanda.media/pitch-deck.html">
+  <meta property="og:title" content="Pitch Deck | Tanda Venture Studio">
+  <link rel="icon" type="image/png" href="tanda-studio-icon-32.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-gradient: linear-gradient(135deg, #ff0050, #00f2ea);
+      --accent: #00f2ea;
+      --text-primary: #ffffff;
+      --text-secondary: #cccccc;
+      --text-muted: #888888;
+      --bg-primary: #000000;
+      --bg-card: rgba(255, 255, 255, 0.05);
+      --border: rgba(255, 255, 255, 0.12);
+      --radius: 0.5rem;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html, body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .logo img { height: 28px; width: auto; }
+
+    .deck-nav {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .slide-counter {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .back-link {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: color 0.2s;
+    }
+
+    .back-link:hover { color: var(--accent); }
+
+    .deck {
+      height: 100vh;
+      position: relative;
+    }
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 6rem 2rem 4rem;
+      text-align: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.4s ease, visibility 0.4s;
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .slide-content {
+      max-width: 800px;
+      width: 100%;
+    }
+
+    .slide-title {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .slide-subtitle {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+      line-height: 1.7;
+    }
+
+    .slide-body {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      text-align: left;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+
+    .slide-body p { margin-bottom: 1rem; }
+    .slide-body p:last-child { margin-bottom: 0; }
+    .slide-body ul { margin: 1rem 0; padding-left: 1.5rem; }
+    .slide-body li { margin-bottom: 0.5rem; }
+
+    .stack-visual {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+      margin: 2rem 0;
+    }
+
+    .stack-pill {
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      font-weight: 600;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      background: var(--bg-card);
+    }
+
+    .stack-pill.accent { border-color: var(--accent); color: var(--accent); }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 1.5rem;
+      background: var(--primary-gradient);
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      border-radius: var(--radius);
+      margin-top: 1.5rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 0, 80, 0.4);
+    }
+
+    .prev-next {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .prev-next button {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all 0.2s;
+    }
+
+    .prev-next button:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: var(--accent);
+    }
+
+    .prev-next button:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+    }
+
+    .slide-dots {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .slide-dots button {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: var(--text-muted);
+      cursor: pointer;
+      padding: 0;
+      transition: all 0.2s;
+    }
+
+    .slide-dots button.active {
+      background: var(--accent);
+      transform: scale(1.2);
+    }
+
+    .slide-dots button:hover:not(.active) {
+      background: var(--text-secondary);
+    }
+
+    .prev-next .slide-dots {
+      margin: 0 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .slide { padding: 5rem 1.25rem 5rem; }
+      .slide-body { text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/" class="logo">
+      <img src="tanda-studio-icon-nav.png" alt="Tanda Venture Studio" width="28" height="28">
+      <span>Tanda Studio</span>
+    </a>
+    <div class="deck-nav">
+      <span class="slide-counter" id="slide-counter">1 / 12</span>
+      <a href="/" class="back-link">
+        <i class="fas fa-arrow-left"></i>
+        Studio
+      </a>
+    </div>
+  </header>
+
+  <div class="deck" role="application" aria-label="Pitch deck">
+    <!-- Slide 1: Cover -->
+    <section class="slide active" id="slide-1" role="region" aria-label="Slide 1 of 12">
+      <div class="slide-content">
+        <h1 class="slide-title">Tanda Venture Studio</h1>
+        <p class="slide-subtitle">Building infrastructure for the AI-native generation</p>
+        <p class="slide-body">Secure execution. Workforce enablement. AI-native commerce.</p>
+      </div>
+    </section>
+
+    <!-- Slide 2: Problem -->
+    <section class="slide" id="slide-2" role="region" aria-label="Slide 2 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">The Problem</h2>
+        <div class="slide-body">
+          <p>AI is restructuring how work, value creation, and commerce operate — but tools alone are not enough.</p>
+          <p>Execution without distribution fails. Tools without community plateau. Commerce without infrastructure fragments.</p>
+          <p>The next generation of companies needs aligned systems across secure runtime, workforce adaptation, and monetization rails.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 3: Solution -->
+    <section class="slide" id="slide-3" role="region" aria-label="Slide 3 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Our Solution</h2>
+        <p class="slide-subtitle">A vertically integrated AI infrastructure stack</p>
+        <div class="slide-body">
+          <p>We build ventures that reinforce one another — technically and economically. Not random products. Systems.</p>
+          <div class="stack-visual">
+            <span class="stack-pill accent">Execution Layer</span>
+            <span class="stack-pill accent">Human Capital Layer</span>
+            <span class="stack-pill accent">Commerce Layer</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 4: System Architecture -->
+    <section class="slide" id="slide-4" role="region" aria-label="Slide 4 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">System Architecture</h2>
+        <p class="slide-subtitle">Each venture occupies a defined layer</p>
+        <div class="stack-visual">
+          <div class="stack-pill">
+            <strong>ForgeSpace</strong><br>
+            <small style="color:var(--text-muted)">Secure agent runtime</small>
+          </div>
+          <div class="stack-pill">
+            <strong>OpenCareer / ResumeAI</strong><br>
+            <small style="color:var(--text-muted)">Career ecosystem</small>
+          </div>
+          <div class="stack-pill">
+            <strong>Tanda Commerce</strong><br>
+            <small style="color:var(--text-muted)">AI-native video commerce</small>
+          </div>
+        </div>
+        <p class="slide-body" style="text-align:center; margin-top:1.5rem;">forge.tanda.media · resumeai.tanda.media · app.tanda.media</p>
+      </div>
+    </section>
+
+    <!-- Slide 5: ForgeSpace -->
+    <section class="slide" id="slide-5" role="region" aria-label="Slide 5 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">ForgeSpace</h2>
+        <p class="slide-subtitle">Execution layer — the moat</p>
+        <div class="slide-body">
+          <p>A secure, sandboxed runtime for AI agents and autonomous workflows. Designed for controlled execution, resource isolation, and scalable deployment.</p>
+          <p><strong>Status:</strong> Live at forge.tanda.media. Demo-ready for technical diligence.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 6: OpenCareer / ResumeAI -->
+    <section class="slide" id="slide-6" role="region" aria-label="Slide 6 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">OpenCareer / ResumeAI</h2>
+        <p class="slide-subtitle">Human capital layer — traction engine</p>
+        <div class="slide-body">
+          <p>A career support ecosystem combining AI-powered tools and human community. ResumeAI: ATS optimization, job-specific resumes, career guidance.</p>
+          <p><strong>Traction:</strong> 10,000+ resumes generated. Free + Pro ($20/mo). Real product, clear monetization.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 7: Tanda Commerce -->
+    <section class="slide" id="slide-7" role="region" aria-label="Slide 7 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Tanda Commerce</h2>
+        <p class="slide-subtitle">Commerce layer — optionality</p>
+        <div class="slide-body">
+          <p>AI-native video commerce connecting creators, businesses, and digital value. Product tagging, affiliate marketing, creator monetization.</p>
+          <p><strong>Status:</strong> Production-ready at app.tanda.media.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 8: Market Opportunity -->
+    <section class="slide" id="slide-8" role="region" aria-label="Slide 8 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Market Opportunity</h2>
+        <div class="slide-body">
+          <ul>
+            <li>Emerging markets: demographics, AI leapfrogging, graduate volume</li>
+            <li>Global job-seeking market: massive TAM, underserved support</li>
+            <li>AI infrastructure: secure runtime demand as agents scale</li>
+            <li>Video commerce: creator economy + commerce convergence</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 9: Traction -->
+    <section class="slide" id="slide-9" role="region" aria-label="Slide 9 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Traction</h2>
+        <div class="slide-body">
+          <ul>
+            <li><strong>ResumeAI:</strong> 10,000+ resumes generated, Pro subscription live</li>
+            <li><strong>ForgeSpace:</strong> Launched, secure runtime operational</li>
+            <li><strong>Tanda Commerce:</strong> Production-ready platform</li>
+            <li><strong>tanda.media:</strong> Studio layer live, strategic capital pipeline</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 10: Business Model -->
+    <section class="slide" id="slide-10" role="region" aria-label="Slide 10 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Business Model</h2>
+        <p class="slide-subtitle">Dual GTM</p>
+        <div class="slide-body">
+          <p><strong>Revenue GTM:</strong> OpenCareer/ResumeAI — short-term revenue, B2C subscriptions.</p>
+          <p><strong>Infrastructure GTM:</strong> ForgeSpace — long-term moat, B2B runtime.</p>
+          <p>Capital allocation: Lead with traction (ResumeAI), invest in moat (ForgeSpace), optionality (Tanda Commerce).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 11: The Ask -->
+    <section class="slide" id="slide-11" role="region" aria-label="Slide 11 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">The Ask</h2>
+        <div class="slide-body">
+          <p>We collaborate with strategic capital partners who invest long-term, contribute strategically, and understand infrastructure plays.</p>
+          <p><strong>Use of funds:</strong> Scale ResumeAI, strengthen ForgeSpace moat, accelerate adoption across emerging markets.</p>
+          <a href="strategic-partners.html" class="cta-btn">
+            Share your interest <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Slide 12: Contact -->
+    <section class="slide" id="slide-12" role="region" aria-label="Slide 12 of 12">
+      <div class="slide-content">
+        <h2 class="slide-title">Let's build together</h2>
+        <p class="slide-subtitle">Careers shouldn't be built alone. Agents shouldn't run unsecured. Commerce shouldn't be fragmented.</p>
+        <p class="slide-body" style="text-align:center;">
+          <a href="mailto:hello@tanda.media" style="color:var(--accent); font-weight:600;">hello@tanda.media</a>
+        </p>
+        <a href="strategic-partners.html" class="cta-btn">
+          Partner with us <i class="fas fa-handshake"></i>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <div class="prev-next">
+    <button type="button" id="btn-prev" aria-label="Previous slide">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="slide-dots" id="slide-dots" role="tablist"></div>
+    <button type="button" id="btn-next" aria-label="Next slide">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+
+  <script>
+    (function() {
+      var slides = document.querySelectorAll('.slide');
+      var total = slides.length;
+      var current = 0;
+      var counter = document.getElementById('slide-counter');
+      var dots = document.getElementById('slide-dots');
+      var btnPrev = document.getElementById('btn-prev');
+      var btnNext = document.getElementById('btn-next');
+
+      for (var i = 0; i < total; i++) {
+        var dot = document.createElement('button');
+        dot.setAttribute('role', 'tab');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.setAttribute('data-index', i);
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', function() { goTo(parseInt(this.getAttribute('data-index'), 10)); });
+        dots.appendChild(dot);
+      }
+
+      function goTo(n) {
+        if (n < 0 || n >= total) return;
+        current = n;
+        slides.forEach(function(s, i) {
+          s.classList.toggle('active', i === current);
+          s.setAttribute('aria-hidden', i !== current);
+        });
+        dots.querySelectorAll('button').forEach(function(d, i) {
+          d.classList.toggle('active', i === current);
+        });
+        counter.textContent = (current + 1) + ' / ' + total;
+        btnPrev.disabled = current === 0;
+        btnNext.disabled = current === total - 1;
+      }
+
+      btnPrev.addEventListener('click', function() { goTo(current - 1); });
+      btnNext.addEventListener('click', function() { goTo(current + 1); });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); goTo(current + 1); }
+        else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      });
+
+      goTo(0);
+    })();
+  </script>
+</body>
+</html>
