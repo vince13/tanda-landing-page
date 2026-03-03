@@ -150,6 +150,52 @@
     .slide-body ul { margin: 1rem 0; padding-left: 1.5rem; }
     .slide-body li { margin-bottom: 0.5rem; }
 
+    .slide-body-centered { text-align: center; }
+
+    .tam-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .tam-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .tam-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+    }
+
+    .tam-region {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .tam-fig {
+      font-size: 1rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .tam-fig strong { color: var(--text-primary); }
+
+    .tam-sources {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 700px) {
+      .tam-grid { grid-template-columns: 1fr; }
+    }
+
     .stack-visual {
       display: flex;
       flex-wrap: wrap;
@@ -275,11 +321,11 @@
 
   <div class="deck" role="application" aria-label="Pitch deck">
     <!-- Slide 1: Cover -->
-    <section class="slide active" id="slide-1" role="region" aria-label="Slide 1 of 12">
+    <section class="slide slide-cover active" id="slide-1" role="region" aria-label="Slide 1 of 12">
       <div class="slide-content">
         <h1 class="slide-title">Tanda Venture Studio</h1>
         <p class="slide-subtitle">Building infrastructure for the AI-native generation</p>
-        <p class="slide-body">Secure execution. Workforce enablement. AI-native commerce.</p>
+        <p class="slide-body slide-body-centered">Secure execution. Workforce enablement. AI-native commerce.</p>
       </div>
     </section>
 
@@ -366,21 +412,41 @@
         <div class="slide-body">
           <p>AI-native video commerce connecting creators, businesses, and digital value. Product tagging, affiliate marketing, creator monetization.</p>
           <p><strong>Status:</strong> Production-ready at app.tanda.media.</p>
+          <p><strong>Traction:</strong> 16,000+ users on waitlist awaiting production release.</p>
         </div>
       </div>
     </section>
 
-    <!-- Slide 8: Market Opportunity -->
+    <!-- Slide 8: Market Opportunity — TAM / SAM / SOM -->
     <section class="slide" id="slide-8" role="region" aria-label="Slide 8 of 12">
       <div class="slide-content">
         <h2 class="slide-title">Market Opportunity</h2>
+        <p class="slide-subtitle">TAM · SAM · SOM (figures)</p>
         <div class="slide-body">
-          <ul>
-            <li>Emerging markets: demographics, AI leapfrogging, graduate volume</li>
-            <li>Global job-seeking market: massive TAM, underserved support</li>
-            <li>AI infrastructure: secure runtime demand as agents scale</li>
-            <li>Video commerce: creator economy + commerce convergence</li>
-          </ul>
+          <div class="tam-grid">
+            <div class="tam-card">
+              <h3>Tanda Commerce</h3>
+              <p class="tam-region">Africa $250B · SE Asia $50B · LATAM $5B</p>
+              <p class="tam-fig"><strong>TAM</strong> $305B</p>
+              <p class="tam-fig"><strong>SAM</strong> $50B</p>
+              <p class="tam-fig"><strong>SOM</strong> $5B</p>
+            </div>
+            <div class="tam-card">
+              <h3>ForgeSpace</h3>
+              <p class="tam-region">AI agent infrastructure</p>
+              <p class="tam-fig"><strong>TAM</strong> $139B</p>
+              <p class="tam-fig"><strong>SAM</strong> $11B</p>
+              <p class="tam-fig"><strong>SOM</strong> $1B</p>
+            </div>
+            <div class="tam-card">
+              <h3>OpenCareer / ResumeAI</h3>
+              <p class="tam-region">Online recruitment & career tools</p>
+              <p class="tam-fig"><strong>TAM</strong> $35B</p>
+              <p class="tam-fig"><strong>SAM</strong> $4B</p>
+              <p class="tam-fig"><strong>SOM</strong> $200M</p>
+            </div>
+          </div>
+          <p class="tam-sources">Sources: e-commerce Africa/SE Asia/LATAM; agentic AI market 2026–2034; online recruitment market 2025.</p>
         </div>
       </div>
     </section>
@@ -393,7 +459,7 @@
           <ul>
             <li><strong>ResumeAI:</strong> 10,000+ resumes generated, Pro subscription live</li>
             <li><strong>ForgeSpace:</strong> Launched, secure runtime operational</li>
-            <li><strong>Tanda Commerce:</strong> Production-ready platform</li>
+            <li><strong>Tanda Commerce:</strong> 16,000+ waitlist, production-ready platform</li>
             <li><strong>tanda.media:</strong> Studio layer live, strategic capital pipeline</li>
           </ul>
         </div>
