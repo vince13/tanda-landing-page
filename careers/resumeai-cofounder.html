@@ -221,6 +221,36 @@
       resize: vertical;
     }
 
+    .form-group input[type="file"] {
+      padding: 0.5rem 0;
+      cursor: pointer;
+    }
+
+    .form-group input[type="file"]::file-selector-button {
+      font-family: inherit;
+      font-size: 0.875rem;
+      padding: 0.5rem 1rem;
+      margin-right: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+
+    .form-group input[type="file"]::file-selector-button:hover {
+      background: rgba(255, 255, 255, 0.15);
+      border-color: var(--border-focus);
+    }
+
+    .field-hint {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.35rem;
+    }
+
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -389,7 +419,7 @@
       <h2>Interested?</h2>
       <p class="form-subtitle">If you believe careers shouldn't be built alone, complete the form below. We look forward to learning more about you.</p>
 
-      <form id="apply-form" class="form" action="https://formsubmit.co/hello@tanda.media" method="POST">
+      <form id="apply-form" class="form" action="https://formsubmit.co/hello@tanda.media" method="POST" enctype="multipart/form-data">
         <input type="hidden" name="_subject" value="ResumeAI Co-Founder Application">
         <input type="hidden" name="_captcha" value="false">
         <input type="hidden" name="_template" value="table">
@@ -409,6 +439,19 @@
         <div class="form-group">
           <label for="linkedin">LinkedIn profile</label>
           <input type="url" id="linkedin" name="linkedin" placeholder="https://linkedin.com/in/...">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="resume">Resume *</label>
+            <input type="file" id="resume" name="resume" required accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <span class="field-hint">PDF, DOC, or DOCX. Max 10MB total.</span>
+          </div>
+          <div class="form-group">
+            <label for="cover">Cover letter</label>
+            <input type="file" id="cover" name="cover_letter" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
+            <span class="field-hint">Optional. PDF, DOC, or DOCX.</span>
+          </div>
         </div>
 
         <div class="form-group">
