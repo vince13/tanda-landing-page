@@ -18,10 +18,12 @@ tanda-landing-page/
 ├── robots.txt          # Search engine crawling rules
 ├── sitemap.xml         # Site structure for search engines
 ├── site.webmanifest    # PWA manifest
-├── Tanda logo.png      # Logo file
-├── apple-touch-icon.png # iOS icon
-├── favicon-192x192.png # Favicon 192x192
-├── favicon-512x512.png  # Favicon 512x512
+├── TandaStudioLogo.png           # Source logo
+├── tanda-studio-icon-*.png       # Icons (16–512px, transparent)
+├── tanda-studio-icon-nav.png    # Navbar icon (40px)
+├── tanda-studio-apple-touch.png # Apple touch (180px)
+├── tanda-studio-og.png          # Social share (1200×630)
+├── tanda-studio-logo-full.png   # Full logo (transparent)
 ├── .gitignore          # Git ignore rules
 └── README.md           # This file
 ```
