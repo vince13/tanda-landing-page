@@ -172,6 +172,38 @@
 
     .nav-cta { display: flex; gap: 1rem; align-items: center; }
 
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: 0.5rem;
+      line-height: 1;
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+      padding-top: 0.5rem;
+    }
+
+    .mobile-nav.open {
+      display: flex;
+    }
+
+    .mobile-nav .btn {
+      width: 100%;
+      justify-content: center;
+      padding: 1rem 1.25rem;
+      border-radius: 0.5rem;
+      margin-bottom: 0.5rem;
+      white-space: nowrap;
+    }
+
     .btn {
       padding: 0.75rem 1.5rem;
       border-radius: 0.5rem;
@@ -494,8 +526,19 @@
     /* Mobile */
     @media (max-width: 768px) {
       .header { padding: 1rem; }
-      .nav { flex-direction: column; gap: 1rem; }
-      .nav-cta { width: 100%; justify-content: center; }
+      .nav {
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+      }
+      .nav-cta { display: none; }
+      .hamburger { display: block; }
+      .mobile-nav {
+        flex-basis: 100%;
+        order: 3;
+      }
       .hero { padding-top: 10rem; padding-left: 1rem; padding-right: 1rem; }
       .hero-cta { flex-direction: column; align-items: stretch; }
       .section { padding: 3rem 1rem; }
@@ -522,6 +565,14 @@
         <span>Tanda Studio</span>
       </a>
       <div class="nav-cta">
+        <a href="#ventures" class="btn btn-secondary">Explore Our Ventures</a>
+        <a href="careers/" class="btn btn-secondary">Careers</a>
+        <a href="strategic-partners.html" class="btn btn-primary">For Strategic Capital</a>
+      </div>
+      <button type="button" class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <i class="fas fa-bars" id="hamburger-icon"></i>
+      </button>
+      <div class="mobile-nav" id="mobile-nav" aria-hidden="true">
         <a href="#ventures" class="btn btn-secondary">Explore Our Ventures</a>
         <a href="careers/" class="btn btn-secondary">Careers</a>
         <a href="strategic-partners.html" class="btn btn-primary">For Strategic Capital</a>
@@ -719,6 +770,26 @@
         }
       });
     });
+
+    var hamburger = document.getElementById('hamburger');
+    var mobileNav = document.getElementById('mobile-nav');
+    var hamburgerIcon = document.getElementById('hamburger-icon');
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', function() {
+        var isOpen = mobileNav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', isOpen);
+        mobileNav.setAttribute('aria-hidden', !isOpen);
+        hamburgerIcon.className = isOpen ? 'fas fa-times' : 'fas fa-bars';
+      });
+      mobileNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileNav.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          hamburgerIcon.className = 'fas fa-bars';
+        });
+      });
+    }
   </script>
 </body>
 </html>
