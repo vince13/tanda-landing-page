@@ -7,9 +7,17 @@
   <!-- Main Landing Page -->
   <url>
     <loc>https://tanda.media/</loc>
-    <lastmod>2025-01-15</lastmod>
+    <lastmod>2026-03-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  
+  <!-- Strategic Partners -->
+  <url>
+    <loc>https://tanda.media/strategic-partners.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   
   <!-- App Home -->
