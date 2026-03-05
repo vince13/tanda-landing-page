@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForgeSpace Security & Technical Overview | Tanda Venture Studio</title>
+  <meta name="description" content="ForgeSpace security model, sandbox isolation, and technical diligence overview.">
+  <link rel="canonical" href="https://tanda.media/forgespace-security.html">
+  <link rel="icon" type="image/png" href="tanda-studio-icon-32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root { --accent: #00f2ea; --primary: #ff0050; --bg: #000; --text: #fff; --muted: #888; --border: rgba(255,255,255,0.12); }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+    .header { background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border); padding: 1rem 2rem; }
+    .header a { color: var(--text); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; }
+    .header a:hover { color: var(--accent); }
+    .page { max-width: 680px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    h1 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 2rem; }
+    h2 { font-size: 1.1rem; margin: 2rem 0 0.75rem; color: var(--accent); }
+    p, li { color: #ccc; margin-bottom: 0.5rem; }
+    ul { margin-left: 1.25rem; margin-bottom: 1rem; }
+    .highlight { background: rgba(0,242,234,0.08); border-left: 3px solid var(--accent); padding: 1rem; margin: 1rem 0; border-radius: 0 4px 4px 0; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <a href="/"><i class="fas fa-arrow-left"></i> Tanda Studio</a>
+  </header>
+
+  <div class="page">
+    <h1>ForgeSpace — Security & Technical Overview</h1>
+    <p class="subtitle">For investor and technical due diligence. forge.tanda.media</p>
+
+    <h2>Overview</h2>
+    <p>ForgeSpace is a secure, sandboxed runtime for AI agents and autonomous workflows. It enables runtimes like OpenClaw to execute locally with zero-trust—agents run in isolated environments without accessing users' unauthorized data.</p>
+
+    <h2>Security Model</h2>
+    <ul>
+      <li><strong>Sandbox isolation</strong> — Agents execute in isolated environments; no cross-tenant access.</li>
+      <li><strong>Resource control</strong> — CPU, memory, and I/O limits prevent runaway consumption.</li>
+      <li><strong>Skill verification</strong> — Capabilities are scoped and verified before execution.</li>
+      <li><strong>Zero-trust</strong> — Agents do not access user data unless explicitly authorized; no infiltration of unauthorized data.</li>
+    </ul>
+
+    <div class="highlight">
+      Agents run locally. User data stays protected. ForgeSpace does not log, store, or transmit user content beyond what the agent is explicitly authorized to access.
+    </div>
+
+    <h2>Architecture</h2>
+    <p>ForgeSpace sits at the execution layer. Agents (e.g. OpenClaw) run within ForgeSpace; they can call downstream services (OpenCareer, Tanda Commerce) via defined APIs. Execution is controlled, auditable, and resource-bounded.</p>
+
+    <h2>Demo</h2>
+    <p>ForgeSpace is live at forge.tanda.media. We can provide a technical demo and answer specific diligence questions. Contact: hello@tanda.media</p>
+  </div>
+</body>
+</html>

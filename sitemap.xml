@@ -20,6 +20,26 @@
     <priority>0.8</priority>
   </url>
   
+  <!-- Investor materials -->
+  <url>
+    <loc>https://tanda.media/investor-memo.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tanda.media/equity-terms.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tanda.media/forgespace-security.html</loc>
+    <lastmod>2026-03-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <!-- Strategic Partners -->
   <url>
     <loc>https://tanda.media/strategic-partners.html</loc>

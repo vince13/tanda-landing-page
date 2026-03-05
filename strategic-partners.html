@@ -244,7 +244,11 @@
     <h1 class="page-title">Partner With Us</h1>
     <p class="page-subtitle">
       Share how you'd like to collaborate. We'll respond within a few business days.
-      <a href="pitch-deck.html" style="display:inline-block; margin-top:0.75rem; color:var(--accent); text-decoration:none; font-weight:500;">View our pitch deck →</a>
+      <span style="display:block; margin-top:0.75rem;">
+        <a href="pitch-deck.html" style="color:var(--accent); text-decoration:none; font-weight:500;">Pitch deck</a>
+        · <a href="investor-memo.html" style="color:var(--accent); text-decoration:none; font-weight:500;">Investor memo</a>
+        · <a href="equity-terms.html" style="color:var(--accent); text-decoration:none; font-weight:500;">Equity terms</a>
+      </span>
     </p>
 
     <form id="partner-form" class="form" action="https://formsubmit.co/hello@tanda.media" method="POST">
@@ -282,6 +286,21 @@
             <option value="Other">Other</option>
           </select>
         </div>
+      </div>
+
+      <div class="form-divider"></div>
+
+      <div class="form-group">
+        <label for="screening_1">Screening (optional, ~200 chars each)</label>
+        <textarea id="screening_1" name="screening_1" maxlength="250" placeholder="What attracts you to Tanda? (brief)"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="screening_2">Investment capacity & timeline</label>
+        <textarea id="screening_2" name="screening_2" maxlength="250" placeholder="Range, timeline, active vs passive..."></textarea>
+      </div>
+      <div class="form-group">
+        <label for="screening_3">How would you add value beyond capital?</label>
+        <textarea id="screening_3" name="screening_3" maxlength="250" placeholder="Expertise, network, time commitment..."></textarea>
       </div>
 
       <div class="form-divider"></div>

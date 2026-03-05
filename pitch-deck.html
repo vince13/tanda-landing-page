@@ -90,6 +90,25 @@
 
     .back-link:hover { color: var(--accent); }
 
+    .pdf-btn {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      padding: 0.4rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      transition: all 0.2s;
+    }
+
+    .pdf-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
     .deck {
       height: 100vh;
       position: relative;
@@ -319,6 +338,20 @@
       .slide-content { padding: 1.5rem 1.25rem; }
       .slide-body { text-align: center; }
     }
+
+    @media print {
+      .header, .prev-next, .pdf-btn { display: none !important; }
+      .deck { height: auto; }
+      .slide {
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        page-break-after: always;
+        height: auto;
+        min-height: 80vh;
+      }
+      .slide:last-child { page-break-after: auto; }
+    }
   </style>
 </head>
 <body>
@@ -329,6 +362,9 @@
     </a>
     <div class="deck-nav">
       <span class="slide-counter" id="slide-counter">1 / 12</span>
+      <button type="button" class="pdf-btn" id="pdf-btn" aria-label="Save as PDF">
+        <i class="fas fa-file-pdf"></i> PDF
+      </button>
       <a href="/" class="back-link">
         <i class="fas fa-arrow-left"></i>
         Studio
@@ -430,7 +466,7 @@
         <p class="slide-subtitle">Human capital layer – traction engine</p>
         <div class="slide-body">
           <p>We're building a community empowered with tools and guidance for every stage of the career journey. Job seeking is a lonely journey today – we're changing that.</p>
-          <p>ResumeAI is the first tool: ATS optimization, job-specific resumes, career guidance. More tools are coming to support users across their entire career path.</p>
+          <p>ResumeAI is the first tool: ATS optimization, job-specific resumes, career guidance. Global focus (UAE, US, EU). More tools are coming to support users across their entire career path.</p>
           <p><strong>Traction:</strong> 10,000+ resumes generated. Free + Pro ($20/mo). Real product, clear monetization.</p>
         </div>
       </div>
@@ -472,7 +508,7 @@
             </div>
             <div class="tam-card">
               <h3>OpenCareer / ResumeAI</h3>
-              <p class="tam-region">Online recruitment & career tools</p>
+              <p class="tam-region">Global · UAE, US, EU focus</p>
               <p class="tam-fig"><strong>TAM</strong> $35B</p>
               <p class="tam-fig"><strong>SAM</strong> $4B</p>
               <p class="tam-fig"><strong>SOM</strong> $200M</p>
@@ -517,7 +553,7 @@
         <h2 class="slide-title">The Ask</h2>
         <div class="slide-body">
           <p>We collaborate with strategic capital partners who invest long-term, contribute strategically, and understand infrastructure plays.</p>
-          <p><strong>Use of funds:</strong> Scale ResumeAI, strengthen ForgeSpace moat, accelerate adoption across emerging markets.</p>
+          <p><strong>Use of funds:</strong> Scale ResumeAI (global), strengthen ForgeSpace moat, accelerate adoption.</p>
           <a href="strategic-partners.html" class="cta-btn">
             Share your interest <i class="fas fa-arrow-right"></i>
           </a>
@@ -594,6 +630,13 @@
       });
 
       goTo(0);
+
+      var pdfBtn = document.getElementById('pdf-btn');
+      if (pdfBtn) {
+        pdfBtn.addEventListener('click', function() {
+          window.print();
+        });
+      }
     })();
   </script>
 </body>
