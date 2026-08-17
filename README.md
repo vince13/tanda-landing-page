@@ -223,7 +223,7 @@ All links point to `app.tanda.media`:
 
 ## 📄 License
 
-Copyright © 2024 Tanda. All rights reserved.
+Copyright 2026 Avandis Technologies Inc. All rights reserved.
 
 ## 🤝 Contributing
 
